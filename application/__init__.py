@@ -9,7 +9,7 @@ def create_app():
     app.config.from_object('config.Config')
 
     with app.app_context():
-        api_prefix = "/gateway_service/api/v1.0/"
-        from .api import report_submission
-        app.register_blueprint(report_submission.report_submission_api, url_prefix=f'{api_prefix}/report_submission')
+        api_prefix = "/yoga_logger/api/v1.0/"
+        from .api import yoga_logger
+        app.register_blueprint(yoga_logger.yoga_logger_api, url_prefix=f'{api_prefix}/log_yoga')
         return app
